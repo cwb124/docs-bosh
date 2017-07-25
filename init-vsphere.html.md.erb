@@ -16,6 +16,9 @@ This document shows how to set up new [environment](terminology.html#environment
 
     # Clone Director templates
     $ git clone https://github.com/cloudfoundry/bosh-deployment
+    
+    # Edit the bosh-deployment/bosh.yml to replace the public DNS server [8.8.8.8] with your organization's private DNS server(s)
+    # under the networks section. Without internal DNS resolution, uploading stemcells and other tasks requiring interaction with vcenter and ESX hosts could fail.
 
     # Fill below variables (replace example values) and deploy the Director
     $ bosh create-env bosh-deployment/bosh.yml \
